@@ -1,0 +1,24 @@
+
+    {% extends 'base.html' %}
+    {%block title %} Привет {% endblock%}
+
+        {% block content%}
+
+        <p>Привет, бро я знаю что тебя зовут: {{name}}</p>
+        {%
+            set rage= True
+            %}
+        <p>Возраст {{20}}</p>
+    
+        {% if rage %}
+            <p> Вы зарегались</p>
+        {% else %}
+            <p> Вы зарегались</p>
+        {%endif%}
+    
+        {% set user_list =["Tom", "Jerry", "Spike"]%}
+        {%for user in user_list%}
+        <p> {{user}}</p>
+        {% endfor%}
+        {% endblock %}
+
