@@ -27,11 +27,17 @@ def Products():
 def Accessories():
     return 'Аксесуары'
 
+@app.route('/MyOffice')
+def My_Office():
+    return render_template('Office.html')
+
+
+
 
 @app.route('/acc_user/<username>')
 def User_name(username):
     return render_template('hello.html', name = username)
 
 if __name__ == '__main__': #Точка входа нашей программы 
-    print("пошел нахуй со своми лабами") 
+    print("Hi") 
     app.run(debug=True)
