@@ -1,11 +1,20 @@
 from flask import Flask
 from flask import render_template
+import sqlite3
 
 app = Flask(__name__)
 
+connetion = sqlite3.connect('my_database.db', check_same_thread=False)
+cursor = connetion.cursor()
+
+def productDB():
+    listDB = cursor.execute('SELECT * FROM product ')
+    return listDB.fetchall()
+
 @app.route('/')
 def index():
-    return render_template('Main.html')
+    shop= productDB()
+    return render_template('Main.html', shop =shop)
 
 @app.route('/News')
 def News():

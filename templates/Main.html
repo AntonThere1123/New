@@ -6,19 +6,62 @@
     <title>Меню</title>
     <style>
         body {
-            background-color: rgb(97, 92, 92); 
+            background-image: url('static/F1.png');
+            background-repeat: repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .navigation a {
+            color: black; /* Черный цвет ссылок */
+            text-decoration: none; /* Без подчеркивания */
+        }
+
+        ul {
+            list-style-type: none; /* Убираем маркеры списков */
+            padding-left: 0; /* Обнуляем внутренний отступ слева */
+        }
+
+        li.navigation{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 10px;
+            z-index: -10;
+        }
+
+        li.navigation2{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 20px;
+            z-index: -10;
+        }
+
+        img#Logo{
+            width: 7%;
+            height: auto;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: -1;
         }
     </style>
 </head>
 <body>
-    <p align="center"> ДОБРО ПОЖАЛОВАТЬ НА ЭТОТ САЙТ</p>
-    <ul>
-        <li><a href="/MyOffice">Личный кабинет</a></li>
-        <li><a href="/Products">Товары</a></li>
-        <li><a href="/News">Новинки</a></li>
-        <img src="static/Key.jpg", width="120">
-        
-        
-    <ul>
+    <p align="center">ДОБРО ПОЖАЛОВАТЬ НА ЭТОТ САЙТ</p>
+    
+    <!-- Меню навигации -->
+    <div style="text-align:center;"> <!-- Центрирование меню -->
+        <ul>
+            <li class="navigation"><a href="/MyOffice">Личный кабинет</a></li>
+            <li class="navigation"><a href="/Products">Товары</a></li>
+            <li class="navigation"><a href="/News">Новинки</a></li>
+        </ul>
+    </div>
+
+    <!-- Логотип внизу страницы -->
+    <img id="Logo" src="static/Key.png" alt="Логотип сайта" />
 </body>
 </html>
+
