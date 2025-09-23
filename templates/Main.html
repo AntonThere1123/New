@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Меню</title>
     <style>
+        .small-img {
+            width: 400px; /* ширина картинки */
+        }
+
         body {
             background-image: url('static/F1.png');
             background-repeat: repeat;
@@ -13,7 +17,7 @@
         }
 
         .navigation a {
-            color: black; /* Черный цвет ссылок */
+            color:  black; /* Черный цвет ссылок */
             text-decoration: none; /* Без подчеркивания */
         }
 
@@ -49,6 +53,8 @@
     </style>
 </head>
 <body>
+
+
     <p align="center">ДОБРО ПОЖАЛОВАТЬ НА ЭТОТ САЙТ</p>
     
     <!-- Меню навигации -->
@@ -57,8 +63,25 @@
             <li class="navigation"><a href="/MyOffice">Личный кабинет</a></li>
             <li class="navigation"><a href="/Products">Товары</a></li>
             <li class="navigation"><a href="/News">Новинки</a></li>
+            <li class="navigation"><a href="/Contacts">Контакты</a></li>
+            <li class="navigation"><a href="/About_us">О нас</a></li>
+
+             <article class="product-card">
+    <figure class="product-card__image">
+        <img src="/static/F2.png" alt="Название товара" class="small-img">
+    </figure>
+    <div class="product-card__content">
+        <h3 class="product-card__title">Название товара</h3>
+    </div>
+</article> 
+
+            
         </ul>
     </div>
+
+
+
+ 
 
     <!-- Логотип внизу страницы -->
     <img id="Logo" src="static/Key.png" alt="Логотип сайта" />

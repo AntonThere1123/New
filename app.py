@@ -40,6 +40,14 @@ def Accessories():
 def My_Office():
     return render_template('Office.html')
 
+@app.route('/About_us')
+def About_us():
+    return render_template('About_us.html')
+
+
+@app.route('/Contacts')
+def Contacts():
+    return render_template('Contacts.html')
 
 
 
