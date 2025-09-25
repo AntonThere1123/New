@@ -3,10 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My office</title>
+    <title>Регистрация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-image: url('static/F1.png');
+            background-repeat: repeat;
+            background-position: center;
+            background-size: cover; 
+        }
+
+        nav {
+            width: 100%; /* Навигация занимает всю ширину экрана */
+            text-align: center; /* Центрируем навигационные ссылки */
+            position: fixed; /* Фиксируем навигацию сверху */
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, 0.8); /* Полупрозрачный фон для навигации */
+            z-index: 1000; /* Навигация поверх других элементов */
+        }
+
+        ul {
+            list-style-type: none; /* Убираем маркеры списков */
+            padding-left: 0; /* Обнуляем внутренний отступ слева */
+        }
+
+        li.navigation{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 10px;
+            z-index: -10;
+        }
+
+        li.navigation2{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 20px;
+            z-index: -10;
+        }
+
+        form {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px; /* Увеличенная ширина формы */
+            text-align: center;
+            margin-top: 100px; /* Отступ снизу от навигационного блока */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #bcb1b1;
+            color: rgb(41, 38, 38);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <p align = "center"><b>МОЙ КАБИНЕТ</b></p>
-    
+    <nav>
+        <ul>
+            <li class="navigation"><a href="/MyOffice">Личный кабинет</a></li>
+            <li class="navigation"><a href="/Products">Товары</a></li>
+            <li class="navigation"><a href="/News">Новинки</a></li>
+            <li class="navigation"><a href="/Contacts">Контакты</a></li>
+            <li class="navigation"><a href="/About_us">О нас</a></li>
+        </ul>
+    </nav>
+
+    <form action="/register" method="post">
+        <h2>Форма регистрации</h2>
+        <input type="text" name="username" placeholder="Имя пользователя" required><br>
+        <input type="password" name="password" placeholder="Пароль" required><br>
+        <button type="submit">Зарегистрироваться</button>
+    </form>
 </body>
 </html>

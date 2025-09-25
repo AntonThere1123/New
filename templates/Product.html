@@ -4,8 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары</title>
+        <style>
+        .small-img {
+            width: 150px; /* Ширина картинки */
+            display: table-row;
+        
+        }
+
+        body {
+            background-image: url('static/F1.png');
+            background-repeat: repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .navigation a {
+            color: black; /* Чёрный цвет ссылок */
+            text-decoration: none; /* Без подчёркивания */
+        }
+
+        ul {
+            list-style-type: none; /* Убираем маркеры списков */
+            padding-left: 0; /* Обнуляем внутренний отступ слева */
+        }
+
+        li.navigation{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 10px;
+            z-index: -10;
+        }
+
+        li.navigation2{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 20px;
+            z-index: -10;
+        }
+
+
+        #Logo {
+            width: 7%;              /* Размер логотипа */
+            height: auto;
+            position: absolute;     /* Абсолютное позиционирование */
+            top: 10px;              /* Верхняя позиция */
+            left: 10px;             /* Левая позиция */
+        }
+
+       body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Расстояние между карточками */
+    margin-top: 50px; /* ★ Новая строка для отступа сверху ★ */
+}
+        .product-card {
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Эффект увеличения при наведении */
+        .product-card:hover {
+            transform: scale(1.05); /* Увеличение размера */
+        }
+
+        /* Картинка товара */
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Заголовок товара */
+        h3.product-title {
+            font-size: 18px;
+            color: #000000;
+            padding: 10px 0;
+        }
+
+        /* Дополнительная информация */
+        p.product-desc {
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 10px 20px;
+            display: none; /* Скрываем по умолчанию */
+            color: aqua;
+        }
+
+        /* Показываем дополнительную информацию при наведении */
+        .product-card:hover p.product-desc {
+            display: block;
+        }
+
+        /* Цена товара */
+        span.price {
+            font-weight: bold;
+            color: green;
+            font-size: 16px;
+        }
+
+        /* Кнопка покупки */
+        button.buy-btn {
+            background-color: #ffd700;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.buy-btn:hover {
+            background-color: #ffb300;
+        }
+
+        /* Контейнер для карточек */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Расстояние между карточками */
+        }
+
+
+    </style>
 </head>
 <body>
-    
+
+    <div style="text-align:center;"> <!-- Центрирование меню -->
+    <ul>
+        <li class="navigation"><a href="/MyOffice">Личный кабинет</a></li>
+        <li class="navigation"><a href="/Products">Товары</a></li>
+        <li class="navigation"><a href="/News">Новинки</a></li>
+        <li class="navigation"><a href="/Contacts">Контакты</a></li>
+        <li class="navigation"><a href="/About_us">О нас</a></li>
+    </ul>
+</div>
+
+   <!-- Меню навигации -->
+<div class="product-grid">
+    <!-- Первая карточка -->
+    <div class="product-card">
+        <div class="product-image">
+            <img src="static/Key.png" alt="T-Shirt Sample Image">
+        </div>
+        <h3 class="product-title">Футболка Premium</h3>
+        <p class="product-desc"></p>
+        <span class="price">Цена: ₽1500</span><br/>
+        <button class="buy-btn">Купить</button>
+    </div> 
+
+
+
 </body>
 </html>

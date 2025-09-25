@@ -1,5 +1,4 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request, redirect, url_for
 import sqlite3
 
 app = Flask(__name__)
@@ -36,9 +35,29 @@ def Products():
 def Accessories():
     return 'Аксесуары'
 
-@app.route('/MyOffice')
-def My_Office():
-    return render_template('Office.html')
+@app.route('/MyOffice', methods=['GET', 'POST'])
+def my_office():
+    message = ''
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # Здесь можно добавить проверку подлинности учетных данных
+        logged_in = True
+        message = f'Добро пожаловать, {username}'
+    else:
+        message = 'Вы не зарегистрированы.'
+    return render_template('Office.html', message=message)
+
+# Страница регистрации
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        # Сохранение регистрационных данных (например, в базу данных)
+        # Примечание: Это упрощённая версия, реальная регистрация должна включать хранение хэшей паролей и защиту от SQL инъекций
+        return redirect(url_for('my_office'))
+    return render_template('Register.html')
 
 @app.route('/About_us')
 def About_us():

@@ -5,20 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title%} Новости {% endblock %}</title>
     <style>
+        .small-img {
+            width: 150px; /* Ширина картинки */
+            display: table-row;
+        
+        }
+
         body {
-            background-color: rgb(145, 200, 218); 
+            background-image: url('static/Back.png');
+            background-repeat: repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .navigation a {
+            color: black; /* Чёрный цвет ссылок */
+            text-decoration: none; /* Без подчёркивания */
+        }
+
+        ul {
+            list-style-type: none; /* Убираем маркеры списков */
+            padding-left: 0; /* Обнуляем внутренний отступ слева */
+        }
+
+        li.navigation{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 10px;
+            z-index: -10;
+        }
+
+        li.navigation2{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 20px;
+            z-index: -10;
+        }
+
+        article.product-card {
+            position: relative; /* Позиционируем товар относительно родителя */
+            max-width: 200px;   /* Ограничиваем ширину карточки */
+            margin-top: 50px;   /* Добавляем отступ сверху от логотипа */
+        }
+
+        #Logo {
+            width: 7%;              /* Размер логотипа */
+            height: auto;
+            position: absolute;     /* Абсолютное позиционирование */
+            top: 10px;              /* Верхняя позиция */
+            left: 10px;             /* Левая позиция */
         }
     </style>
 </head>
 <body>
+
     <p align = "center">ДОБРО ПОЖАЛОВАТЬ В НОВОСТИ!</p>
+
+    <img id="Logo" src="static/Key.png" alt="Логотип сайта" />
+
+
+<!-- Меню навигации -->
+<div style="text-align:center;"> <!-- Центрирование меню -->
     <ul>
-        <li><a href="/News/Promo">Акции</a></li>
-        <li><a href="/News/Announcements">Анонсы</a></li>
+        <li class="navigation"><a href="/MyOffice">Личный кабинет</a></li>
+        <li class="navigation"><a href="/Products">Товары</a></li>
+        <li class="navigation"><a href="/News">Новинки</a></li>
+        <li class="navigation"><a href="/Contacts">Контакты</a></li>
+        <li class="navigation"><a href="/About_us">О нас</a></li>
+    </ul>
+</div>
+    <ul>
+        <li class="navigation2"><a href="/News/Promo">Акции</a></li>
+        <li class="navigation2"><a href="/News/Announcements">Анонсы</a></li>
     <ul>
 <p align = "center">
     <del>Есть бесплатные товары</del>
 </p>
-    <li><a href="/">Вернуться на главную страницу</a></li>
+    <li class="navigation"><a href="/">Вернуться на главную страницу</a></li>
 </body>
 </html>

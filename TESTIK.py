@@ -2,16 +2,18 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/', methods = ['post', 'get'])
+Acc=False
+
+@app.route('/MyOffice', methods = ['POST', 'GET'])
 def integer():
     messeg =''
     if request.method == "POST":
         user = request.form.get('user')
         password =request.form.get('password')
         messeg = messeg + user + '' + password
-        return render_template('TESTIK.html', messeg= messeg)
+        return render_template('Office.html', messeg= messeg)
     
-    return render_template('TESTIK.html', messeg="Хз")
+    return render_template('Office.html', messeg="Вы не зареганы")
 
 
 if __name__== '__main__':

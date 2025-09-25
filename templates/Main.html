@@ -6,7 +6,9 @@
     <title>Меню</title>
     <style>
         .small-img {
-            width: 400px; /* ширина картинки */
+            width: 150px; /* Ширина картинки */
+            display: table-row;
+        
         }
 
         body {
@@ -17,8 +19,8 @@
         }
 
         .navigation a {
-            color:  black; /* Черный цвет ссылок */
-            text-decoration: none; /* Без подчеркивания */
+            color: black; /* Чёрный цвет ссылок */
+            text-decoration: none; /* Без подчёркивания */
         }
 
         ul {
@@ -42,49 +44,183 @@
             z-index: -10;
         }
 
-        img#Logo{
-            width: 7%;
+        
+
+        #Logo {
+            width: 7%;              /* Размер логотипа */
             height: auto;
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: -1;
+            position: absolute;     /* Абсолютное позиционирование */
+            top: 10px;              /* Верхняя позиция */
+            left: 10px;             /* Левая позиция */
         }
+
+/* Основная стилизация карточки */
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* Расстояние между карточками */
+    margin-top: 50px; /* ★ Новая строка для отступа сверху ★ */
+}
+        .product-card {
+            width: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            background-color: rgb(255, 255, 255);
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Эффект увеличения при наведении */
+        .product-card:hover {
+            transform: scale(1.05); /* Увеличение размера */
+        }
+
+        /* Картинка товара */
+        .product-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Заголовок товара */
+        h3.product-title {
+            font-size: 18px;
+            color: #000000;
+            padding: 10px 0;
+        }
+
+        /* Дополнительная информация */
+        p.product-desc {
+            font-size: 14px;
+            line-height: 1.5;
+            padding: 10px 20px;
+            display: none; /* Скрываем по умолчанию */
+            color: aqua;
+        }
+
+        /* Показываем дополнительную информацию при наведении */
+        .product-card:hover p.product-desc {
+            display: block;
+        }
+
+        /* Цена товара */
+        span.price {
+            font-weight: bold;
+            color: green;
+            font-size: 16px;
+        }
+
+        /* Кнопка покупки */
+        button.buy-btn {
+            background-color: #ffd700;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button.buy-btn:hover {
+            background-color: #ffb300;
+        }
+
+        /* Контейнер для карточек */
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px; /* Расстояние между карточками */
+        }
+
     </style>
 </head>
 <body>
 
+<p align="center">ДОБРО ПОЖАЛОВАТЬ НА ЭТОТ САЙТ</p>
 
-    <p align="center">ДОБРО ПОЖАЛОВАТЬ НА ЭТОТ САЙТ</p>
-    
-    <!-- Меню навигации -->
-    <div style="text-align:center;"> <!-- Центрирование меню -->
-        <ul>
-            <li class="navigation"><a href="/MyOffice">Личный кабинет</a></li>
-            <li class="navigation"><a href="/Products">Товары</a></li>
-            <li class="navigation"><a href="/News">Новинки</a></li>
-            <li class="navigation"><a href="/Contacts">Контакты</a></li>
-            <li class="navigation"><a href="/About_us">О нас</a></li>
+<!-- Логотип в левом верхнем углу -->
+<img id="Logo" src="static/Key.png" alt="Логотип сайта" />
 
-             <article class="product-card">
-    <figure class="product-card__image">
-        <img src="/static/F2.png" alt="Название товара" class="small-img">
-    </figure>
-    <div class="product-card__content">
-        <h3 class="product-card__title">Название товара</h3>
+<div style="text-align:center;"> <!-- Центрирование меню -->
+    <ul>
+        <li class="navigation"><a href="/MyOffice">Личный кабинет</a></li>
+        <li class="navigation"><a href="/Products">Товары</a></li>
+        <li class="navigation"><a href="/News">Новинки</a></li>
+        <li class="navigation"><a href="/Contacts">Контакты</a></li>
+        <li class="navigation"><a href="/About_us">О нас</a></li>
+    </ul>
+</div>
+
+
+<!-- Меню навигации -->
+<div class="product-grid">
+    <!-- Первая карточка -->
+    <div class="product-card">
+        <div class="product-image">
+            <img src="static/Key.png" alt="T-Shirt Sample Image">
+        </div>
+        <h3 class="product-title">Футболка Premium</h3>
+        <p class="product-desc"></p>
+        <span class="price">Цена: ₽1500</span><br/>
+        <button class="buy-btn">Купить</button>
     </div>
-</article> 
 
-            
-        </ul>
+    <!-- Вторая карточка -->
+    <div class="product-card">
+        <div class="product-image">
+            <img src="" alt="T-Shirt Sample Image">
+        </div>
+        <h3 class="product-title">Футболка Standard</h3>
+        <p class="product-desc"></p>
+        <span class="price">Цена: ₽1000</span><br/>
+        <button class="buy-btn">Купить</button>
     </div>
 
+    <!-- Третья карточка -->
+    <div class="product-card">
+        <div class="product-image">
+            <img src="" alt="T-Shirt Sample Image">
+        </div>
+        <h3 class="product-title">Футболка Basic</h3>
+        <p class="product-desc"></p>
+        <span class="price">Цена: ₽700</span><br/>
+        <button class="buy-btn">Купить</button>
+    </div>
+
+    <div class="product-card">
+        <div class="product-image">
+            <img src="" alt="T-Shirt Sample Image">
+        </div>
+        <h3 class="product-title">Футболка Basic</h3>
+        <p class="product-desc"></p>
+        <span class="price">Цена: ₽700</span><br/>
+        <button class="buy-btn">Купить</button>
+    </div>
+
+    <div class="product-card">
+        <div class="product-image">
+            <img src="" alt="T-Shirt Sample Image">
+        </div>
+        <h3 class="product-title">Футболка Basic</h3>
+        <p class="product-desc"></p>
+        <span class="price">Цена: ₽700</span><br/>
+        <button class="buy-btn">Купить</button>
+    </div>
+
+    <div class="product-card">
+        <div class="product-image">
+            <img src="" alt="T-Shirt Sample Image">
+        </div>
+        <h3 class="product-title">Футболка Basic</h3>
+        <p class="product-desc"></p>
+        <span class="price">Цена: ₽700</span><br/>
+        <button class="buy-btn">Купить</button>
+    </div>
+</div>
 
 
- 
-
-    <!-- Логотип внизу страницы -->
-    <img id="Logo" src="static/Key.png" alt="Логотип сайта" />
 </body>
 </html>
-

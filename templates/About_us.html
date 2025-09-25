@@ -4,8 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О нас</title>
+        <style>
+        .small-img {
+            width: 150px; /* Ширина картинки */
+            display: table-row;
+        
+        }
+
+        body {
+            background-image: url('static/F1.png');
+            background-repeat: repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .navigation a {
+            color: black; /* Чёрный цвет ссылок */
+            text-decoration: none; /* Без подчёркивания */
+        }
+
+        ul {
+            list-style-type: none; /* Убираем маркеры списков */
+            padding-left: 0; /* Обнуляем внутренний отступ слева */
+        }
+
+        li.navigation{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 10px;
+            z-index: -10;
+        }
+
+        li.navigation2{
+            display: inline-block;
+            font-size: 16px;
+            padding: 14px 16px;
+            margin-right: 20px;
+            z-index: -10;
+        }
+
+        article.product-card {
+            position: relative; /* Позиционируем товар относительно родителя */
+            max-width: 200px;   /* Ограничиваем ширину карточки */
+            margin-top: 50px;   /* Добавляем отступ сверху от логотипа */
+        }
+
+        #Logo {
+            width: 7%;              /* Размер логотипа */
+            height: auto;
+            position: absolute;     /* Абсолютное позиционирование */
+            top: 10px;              /* Верхняя позиция */
+            left: 10px;             /* Левая позиция */
+        }
+.gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed; /* Фиксация элемента внизу страницы */
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: transparent; /* Прозрачная подложка */
+            padding: 10px 0;
+        }
+
+        /* Гифка и её дубли */
+        .gif-image {
+            width: 60px; /* Размер гифки */
+            height: auto;
+            margin-right: 0; /* Отсутствие промежутков между гифками */
+        }
+        
+    </style>
 </head>
 <body>
+    <!-- Логотип в левом верхнем углу -->
+<img id="Logo" src="static/Key.png" alt="Логотип сайта" />
+
+
+<!-- Меню навигации -->
+<div style="text-align:center;"> <!-- Центрирование меню -->
+    <ul>
+        <li class="navigation"><a href="/MyOffice">Личный кабинет</a></li>
+        <li class="navigation"><a href="/Products">Товары</a></li>
+        <li class="navigation"><a href="/News">Новинки</a></li>
+        <li class="navigation"><a href="/Contacts">Контакты</a></li>
+        <li class="navigation"><a href="/About_us">О нас</a></li>
+    </ul>
+</div>
+
+    <div class="gif-container">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+        <img class="gif-image" src="static/tenor.gif" alt="Tenor gif">
+    </div>
+
     
 </body>
 </html>
